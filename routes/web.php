@@ -23,10 +23,6 @@ Route::prefix('inventory')->name('inventory.')->group(function () {
     Route::delete('/{id}', [InventoryController::class, 'destroy'])->name('destroy');
 });
 
-/*
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 Route::get('/produtos', function () {
     
