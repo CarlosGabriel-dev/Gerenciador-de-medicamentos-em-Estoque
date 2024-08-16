@@ -13,6 +13,10 @@
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 Route::get('/', function () {
     return redirect('/login');
@@ -26,9 +30,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');});
-
+//Route::get('/dashboard', function () {
+    //return view('dashboard');});
 
 Route::prefix('inventory')->name('inventory.')->group(function () {
     Route::get('/', [InventoryController::class, 'index'])->name('index');
