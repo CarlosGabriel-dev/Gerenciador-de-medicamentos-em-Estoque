@@ -51,8 +51,8 @@
 <body>
     <div class="sidebar">
         <h2 class="text-center">Humaniza</h2>
-        <a href="#">Dashboard</a>
-        <a href="#">Inventário</a>
+        <a href="/resources/views/dashboard/index.blade.php">Dashboard</a>
+        <a href="{{ route('inventory.index') }}">Inventário</a>
         <a href="#">Grupos de Medicamentos</a>
         <a href="#">Relatório</a>
         <a href="#">Cadastrar</a>

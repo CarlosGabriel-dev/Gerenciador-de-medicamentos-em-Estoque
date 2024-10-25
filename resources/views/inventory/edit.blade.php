@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">;;;0
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">;;;0 
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
             @method('PUT')
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $medication->name }}" required>
+                <input  type="text" class="form-control" id="name" name="name" value="{{ $medication->name }}" required>
             </div>
             <div class="form-group">
                 <label for="medication_id">ID Medicamento</label>

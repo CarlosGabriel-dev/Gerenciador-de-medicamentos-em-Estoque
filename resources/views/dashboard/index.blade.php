@@ -19,13 +19,13 @@
                             <a href="{{ route('dashboard') }}" class="nav-link text-white">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Inventário</a>
+                            <a href="{{ route('inventory.index') }}" class="nav-link text-white">Inventário</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link text-white">Relatórios</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Cadastrar</a>
+                            <a href="" class="nav-link text-white">Cadastrar</a>
                         </li>
                     </ul>
                 </div>
