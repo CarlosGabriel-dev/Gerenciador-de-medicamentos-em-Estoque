@@ -1,71 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
-    background: linear-gradient(to right, #00f2ff, #009099, #00ffc3);
+    height: 100vh;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
 }
-
-
-button {
-    width: 100%;
-    margin-left: 80px;
-    margin-top: 20px;
-    max-width: 400px;
-    padding: 12px;
-    background-color: #009099;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-    border: 1px solid black;
-}
-
-button:hover {
-    background-color: #01c5d3;
-}
-
-h2 {
+.container {
     text-align: center;
-    margin: 20px;
-    color:black;
-}
-
-.input-register{
-    margin-top: 30px;
-    display: flex;           
-    width: 100%;              
-    margin-bottom: 20px;      
-    text-transform: uppercase; 
-    padding: 8px;             
-    font-size: 14px;
-    max-width: 400px;
-    margin-left: 80px;
-    border-radius: 8px;
-    border: 2px solid black;
-}
-
-.register-container{
-    background-color: #ffffff;
-    padding: 20px;
+    background: #fff;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    height: 550px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
 }
-
-.imagem{
-    width: 150px;
-    height: 50px;
-    text-align: center;
+.logo {
+    width: 200px;
+    margin-bottom: 10px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+}
+.input-group {
     display: flex;
-    justify-content: center;
-    margin-left: 200px;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #b0d46c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background-color: #004510;
 }

@@ -22,10 +22,10 @@
                             <a href="{{ route('inventory.index') }}" class="nav-link text-white">Inventário</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Relatórios</a>
+                            <a href="{{ route('relatorio') }}" class="nav-link text-white">Relatórios</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link text-white">Cadastrar</a>
+                            <a href="{{ route('register') }}" class="nav-link text-white">Cadastrar</a>
                         </li>
                     </ul>
                 </div>

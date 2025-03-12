@@ -1,71 +1,126 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
+/* Layout geral */
 body {
+    display: flex;
+    height: 100vh;
+}
+
+/* Coluna da esquerda */
+.left {
+    width: 50%;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
-    background: linear-gradient(to right, #00f2ff, #00ffc3, #009099);
+    flex-direction: column;
 }
 
-
-button {
-    width: 100%;
-    margin-left: 100px;
-    margin-top: 20px;
-    max-width: 400px;
-    padding: 12px;
-    background-color: #009099;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-    border: 1px solid black;
+.logo {
+    width: 40px;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #01c5d3;
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
 }
 
-h2 {
-    text-align: center;
-    margin: 20px;
-    color: black;
+.subtitle {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
 }
 
-.login-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    height: 400px;
-}
-
-.input-login{
+/* Formulário */
+.form-container {
+    width: 300px;
     margin-top: 30px;
-    display: flex;           
-    width: 100%;              
-    margin-bottom: 20px;      
-    text-transform: uppercase; 
-    padding: 8px;             
-    font-size: 14px;
-    max-width: 400px;
-    margin-left: 100px;
-    border-radius: 8px;
-    border: 2px solid black;
 }
 
-.imagem{
-    width: 150px;
-    height: 50px;
-    text-align: center;
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #b0d46c;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #b0d46c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #004510;
+}
+
+/* Coluna da direita */
+.right {
+    width: 50%;
+    background-color: #b0d46c;
+    color: white;
     display: flex;
     justify-content: center;
-    margin-left: 200px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.right h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.right p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.side-image {
+    width: 50%;  /* Ocupa metade da tela */
+    height: 100vh;  /* Ocupa a altura total da tela */
+    background-color: #000000; /* Cor de fundo para destacar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-image img {
+    max-width: 80%;  /* Ajuste para não ultrapassar a div */
+    max-height: 80%;
+    object-fit: contain;  /* Mantém a proporção da imagem */
 }

@@ -21,6 +21,6 @@ class DashboardController extends Controller
             'medications_out_of_stock' => 1
         ];
 
-        return view('dashboard.index', compact('data'));
+        return view('dashboard.dashboard', compact('data'));
     }
 }

@@ -3,73 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Novo Medicamento</title>
-    @if(session('success'))
-    <div id="popup" class="popup show">
-        <p>{{ session('success') }}</p>
-        <button onclick="closePopup()">Fechar</button>
-    </div>
-    @endif
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <title>Adicionar Medicamento</title>
+    <link rel="stylesheet" href="/css/create.css">
 </head>
-<body>
+<body>    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-dark text-white min-vh-100">
+                <div class="d-flex flex-column p-3">
+                    <h3 class="text-center">Humaniza</h3>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard') }}" class="nav-link text-white">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('inventory.index') }}" class="nav-link text-white">Inventário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('relatorio') }}" class="nav-link text-white">Relatórios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('register') }}" class="nav-link text-white">Cadastrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     <div class="container">
-        <h2>Adicionar Novo Medicamento</h2>
-        <form id="medicamentoForm" method="POST" action="{{ route('inventory.create') }}">
-            @csrf
-            <div class="form-group">
-                <label for="catmat">CATMAT Medicamento</label>
-                <input type="text" id="catmat" name="catmat">
-            </div>
-            <div class="form-group">
-                <label for="nome">Nome do Medicamento</label>
-                <input type="text" id="nome" name="nome">
-            </div>
-            <div class="form-group">
-                <label for="principio">Princípio Ativo</label>
-                <input type="text" id="principio" name="principio">
-            </div>
-            <div class="form-group">
-                <label for="grupo">Nome Grupo</label>
-                <select id="grupo" name="grupo">
-                    <option value="comum">Comum</option>
-                    <!-- Outras opções aqui -->
+        <aside class="sidebar">
+            <h1>Humaniza</h1>
+            <p class="user">Carlos Gabriel <span>Super Admin</span></p>
+            <nav>
+                <ul>
+                    <li class="active">Inventário</li>
+                    <li>Lista de Medicamentos</li>
+                    <li>Grupos de Medicamentos</li>
+                    <li>Relatório</li>
+                    <li>Cadastrar</li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content">
+            <header>
+                <h2>Adicionar novo medicamento</h2>
+                <span class="date">14 Janeiro 2024 - 08:45:04</span>
+            </header>
+            
+            <form action="salvar_medicamento.php" method="POST" class="form">
+                <input type="text" name="nome" placeholder="Nome do medicamento" required>
+                <input type="text" name="id" placeholder="ID do medicamento" required>
+                <select name="grupo" required>
+                    <option value="">- Selecione Grupo -</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="fornecimento">Tipo de Fornecimento</label>
-                <input type="text" id="fornecimento" name="fornecimento">
-            </div>
-            <div class="form-group">
-                <label for="minima">Quantidade Mínima</label>
-                <input type="number" id="minima" name="minima">
-            </div>
-            <div class="form-group">
-                <label for="ideal">Quantidade Ideal</label>
-                <input type="number" id="ideal" name="ideal">
-            </div>
-            <div class="buttons">
-                <button type="submit" class="btn-save">Salvar</button>
-                <button type="button" class="btn-cancel" onclick="cancel()">Cancelar</button>
-            </div>
-        </form>
+                <input type="number" name="quantidade" placeholder="Quantidade em Número" required>
+                <input type="number" name="ideal" placeholder="Quantidade ideal" required>
+                <input type="number" name="minima" placeholder="Quantidade mínima" required>
+                <button type="submit" class="btn">Salvar detalhes</button>
+            </form>
+        </main>
     </div>
-
-    <div id="popup" class="popup">
-        <p>Cadastro realizado com sucesso!</p>
-        <button onclick="closePopup()">Fechar</button>
-    </div>
-
-    <script>
-        function cancel() {
-            if(confirm("Tem certeza que deseja cancelar?")) {
-                document.getElementById('medicamentoForm').reset();
-            }
-        }
-
-        function closePopup() {
-            document.getElementById('popup').classList.remove('show');
-        }
-    </script>
 </body>
 </html>
