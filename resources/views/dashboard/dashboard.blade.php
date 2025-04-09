@@ -1,126 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="/js/dashboard.js" defer></script>
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 bg-dark text-white min-vh-100">
-                <div class="d-flex flex-column p-3">
-                    <h3 class="text-center">Humaniza</h3>
-                    <hr>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a href="{{ route('dashboard') }}" class="nav-link text-white">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('inventory.index') }}" class="nav-link text-white">Inventário</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('relatorio') }}" class="nav-link text-white">Relatórios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link text-white">Cadastrar</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Humaniza</h2>
+            <div class="user-info">
+                <p>Carlos Gabriel</p>
+                <span>Super Admin</span>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('inventory.index') }}">Inventário</a></li>
+                    <li><a href="{{ route('relatorio') }}">Relatórios</a></li>
+                    <li><a href="{{ route('register') }}">Cadastrar</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <div class="col-md-10">
-                <div class="container mt-3">
-                    <h2>Dashboard</h2>
-                    <p>Uma rápida visão geral dos dados do Inventário</p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card text-center bg-success text-white mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bom</h5>
-                                    <p class="card-text">Status do Inventário</p>
-                                    <a href="#" class="btn btn-light">Relatório detalhado</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card text-center bg-warning text-dark mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pedidos</h5>
-                                    <p class="card-text">Relatório de Pedido</p>
-                                    <a href="#" class="btn btn-dark">Relatório detalhado</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card text-center bg-primary text-white mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $data['total_medications'] }}</h5>
-                                    <p class="card-text">Medicamentos disponíveis</p>
-                                    <a href="#" class="btn btn-light">Ver Inventário</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card text-center bg-danger text-white mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $data['medications_out_of_stock'] }}</h5>
-                                    <p class="card-text">Medicamentos em Falta</p>
-                                    <a href="#" class="btn btn-light">Resolver agora</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Inventário</h5>
-                                    <p>Total de Remédio: {{ $data['total_medications'] }}</p>
-                                    <p>Grupos de medicamentos: {{ $data['total_groups'] }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Relatório rápido</h5>
-                                    <p>Medicamentos vendidos: {{ $data['total_medications_sold'] }}</p>
-                                    <p>Saídas registradas: {{ $data['total_sales'] }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Minha farmácia</h5>
-                                    <p>Total de Usuários: {{ $data['total_users'] }}</p>
-                                    <a href="#" class="btn btn-primary">Go to User Management</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Medicamentos</h5>
-                                    <p>Entrada de medicamentos: {{ $data['total_medications_in'] }}</p>
-                                    <a href="#" class="btn btn-primary">Cadastrar novo medicamento</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="header-right">
+            <div class="greeting">
+                <div class="greeting-top">
+                    <span class="icon" id="greeting-icon">☀️</span>
+                    <span class="text" id="greeting-text">Bom dia</span>
+                </div>
+                <div class="date-time">
+                    <span id="current-date">14 Janeiro 2024</span> •
+                    <span id="current-time">08:45:04</span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="rodape">
-        Instituto de Estudos e Pesquisa - Humaniza &copy; 2024.
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <main class="main-content">
+
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+
+            <section class="cards">
+
+                <div class="card-inventory-status">
+                    <div>
+                        <div class="card-icon">
+                            <img src="/img/escudo.png" alt="Ícone" style="width: 45px; height: 45px;">
+                        </div>
+                        <div class="card-title">Bom</div>
+                        <div class="card-subtitle">Status de Inventário</div>
+                    </div>
+                    <a href="#" class="card-button">Relatório detalhado</a>
+                </div>
+
+                <div class="card-pedidos">
+                    <div>
+                        <div class="card-icon">
+                            <img src="/img/pedidos.png" alt="Ícone" style="width: 45px; height: 45px;">
+                        </div>
+                        <div class="card-title">Pedidos</div>
+                        <div class="card-subtitle">Relatório de Pedido</div>
+                    </div>
+                    <a href="#" class="card-button-pedidos">Relatório detalhado</a>
+                </div>
+
+                <div class="card-avaliable">
+                    <div>
+                        <div class="card-icon">
+                            <img src="/img/estoque.png" alt="Ícone" style="width: 45px; height: 45px;">
+                        </div>
+                        <div class="card-title"></div>
+                        <div class="card-subtitle">Medicamentos disponíveis</div>
+                    </div>
+                    <a href="#" class="card-button-avaliable">Ver inventário</a>
+                </div>
+
+                <div class="card-alert">
+                    <div>
+                        <div class="card-icon">
+                            <img src="/img/alerta.png" alt="Ícone" style="width: 45px; height: 45px;">
+                        </div>
+                        <div class="card-title"></div>
+                        <div class="card-subtitle">Medicamentos disponíveis</div>
+                    </div>
+                    <a href="#" class="card-button-alert">Resolver agora</a>
+                </div>
+            </section>
+
+            <section class="info-cards">
+                <div class="info-card">
+                    <h4>Inventário</h4>
+                    <p>Total de Remédio: 298</p>
+                    <p>Grupos de medicamentos: 24</p>
+                    <a href="#">Ver para configuração &gt;&gt;</a>
+                </div>
+                <div class="info-card">
+                    <h4>Relatório rápido</h4>
+                    <p>Medicamentos vendidos: 70,856</p>
+                    <p>Saídas registradas: 5,288</p>
+                    <p>Janeiro 2024</p>
+                </div>
+                <div class="info-card">
+                    <h4>Minha farmácia</h4>
+                    <p>Total de Usuários: 04</p>
+                    <a href="#">Go to User Management &gt;&gt;</a>
+                </div>
+                <div class="info-card">
+                    <h4>Medicamentos</h4>
+                    <p>Entrada de medicamentos: 845</p>
+                    <a href="#">Vai para cadastro de produto &gt;&gt;</a>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
