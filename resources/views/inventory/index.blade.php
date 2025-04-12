@@ -9,44 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        .sidebar {
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            background-color: #343a40;
-            color: #fff;
-            padding-top: 20px;
-        }
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-        }
-        .sidebar a:hover {
-            background-color: #007bff;
-        }
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            flex: 1;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <div class="sidebar">
@@ -59,7 +22,7 @@
     </div>
     <div class="main-content">
         <div class="header">
-            <h1>Lista de Medicamentos</h1>
+            <h1>Inventário -<h2>Lista de Medicamentos</h2></h1>
             <a href="{{ route('inventory.create') }}" class="btn btn-primary">+ Cadastrar Novo Item</a>
         </div>
         <form action="{{ route('inventory.index') }}" method="GET" class="mb-3">
