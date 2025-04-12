@@ -27,9 +27,10 @@
             </nav>
         </aside>
 
-        <div class="header-right">
-            <div class="greeting">
-                <div class="greeting-top">
+        <main class="main-content">
+
+            <header class="header-greeting">
+                <div class="header">
                     <span class="icon" id="greeting-icon">☀️</span>
                     <span class="text" id="greeting-text">Bom dia</span>
                 </div>
@@ -37,13 +38,13 @@
                     <span id="current-date">14 Janeiro 2024</span> •
                     <span id="current-time">08:45:04</span>
                 </div>
-            </div>
-        </div>
+            </header>
 
-        <main class="main-content">
+            <hr class="divider">
 
             <header>
                 <h1>Dashboard</h1>
+                <p>Uma rápida visão geral dos dados do inventário</p>
             </header>
 
             <section class="cards">
@@ -93,28 +94,46 @@
                 </div>
             </section>
 
+            <hr class="divider">
+
             <section class="info-cards">
-                <div class="info-card">
-                    <h4>Inventário</h4>
-                    <p>Total de Remédio: 298</p>
-                    <p>Grupos de medicamentos: 24</p>
-                    <a href="#">Ver para configuração &gt;&gt;</a>
-                </div>
-                <div class="info-card">
-                    <h4>Relatório rápido</h4>
-                    <p>Medicamentos vendidos: 70,856</p>
-                    <p>Saídas registradas: 5,288</p>
-                    <p>Janeiro 2024</p>
-                </div>
-                <div class="info-card">
-                    <h4>Minha farmácia</h4>
-                    <p>Total de Usuários: 04</p>
-                    <a href="#">Go to User Management &gt;&gt;</a>
-                </div>
-                <div class="info-card">
-                    <h4>Medicamentos</h4>
-                    <p>Entrada de medicamentos: 845</p>
-                    <a href="#">Vai para cadastro de produto &gt;&gt;</a>
+                <div class="card-container">
+
+                    <div class="card-final">
+                        <div class="card-title-final">Inventário<a href="#" class="card-link">Ver para configuração &gt;&gt;</a></div>
+                        <div class="card-content">
+                            <div><span class="card-number">298</span> Total de Remédio</div>
+                            <div><span class="card-number">24</span> Grupos de medicamentos</div>
+                        </div>
+                    </div>
+
+                    <div class="card-final">
+                        <div class="card-title-final">Relatório rápido<a href="#" class="card-link">Ver relatório detalhado &gt;&gt;</a></div>
+                        <div class="card-content">
+                            <div><span class="card-number">70,856</span> Medicamentos vendidos</div>
+                            <div><span class="card-number">5,288</span> Saídas registradas</div>
+                        </div>
+                    </div>
+
+                    <div class="card-final">
+                        <div class="card-title-final">Relatório rápido <a href="#" class="card-link">Ver relatório detalhado &gt;&gt;</a></div>
+                        <div class="card-content">
+                            <div><span class="card-number">70,856</span> Medicamentos vendidos</div>
+                            <div><span class="card-number">5,288</span> Saídas registradas</div>
+                        </div>
+                    </div>
+
+                    <div class="card-final">
+                        <div class="card-title-final">Relatório rápido <a href="#" class="card-link">Ver relatório detalhado &gt;&gt;</a></div>
+                        <div class="card-content">
+                            <div>
+                                <span class="card-number">70,856</span>
+                                Medicamentos vendidos
+                            </div>
+                            <div><span class="card-number">5,288</span> Saídas registradas</div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </main>
