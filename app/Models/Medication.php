@@ -9,5 +9,13 @@ class Medication extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'medication_id', 'group', 'quantity'];
+    protected $fillable = [
+        'name',
+        'medication_id',
+        'type',
+        'group',
+        'quantity',
+        'ideal_quantity',
+        'minimum_quantity',
+    ];
 }

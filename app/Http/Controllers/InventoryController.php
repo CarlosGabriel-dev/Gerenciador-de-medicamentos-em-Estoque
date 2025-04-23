@@ -20,9 +20,9 @@ class InventoryController extends Controller
                              ->orWhere('medication_id', 'LIKE', "%{$search}%")
                              ->orWhere('group', 'LIKE', "%{$search}%");
             })
-            ->get();
+            ->paginate(6);
 
-        return view('inventory.index', compact('medications'));
+        return view('inventory.listamedicamento', compact('medications'));
     }
 
     /**
@@ -41,9 +41,22 @@ class InventoryController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'medication_id' => 'required|string|max:255|unique:medications',
+            'type' => 'required|string|max:255',
             'group' => 'required|string|max:255',
             'quantity' => 'required|integer|min:0',
+            'ideal_quantity' => 'required|integer|min:0',
+            'minimum_quantity' => 'required|integer|min:0',
         ]);
+
+        // Verifica duplicidade (nome + tipo + grupo)
+        $exists = Medication::where('name', $validatedData['name'])
+            ->where('type', $validatedData['type'])
+            ->where('group', $validatedData['group'])
+            ->exists();
+
+        if ($exists) {
+            return back()->withErrors(['name' => 'Este medicamento já está cadastrado com o mesmo tipo e grupo.'])->withInput();
+        }
 
         Medication::create($validatedData);
 
@@ -68,8 +81,11 @@ class InventoryController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'medication_id' => 'required|string|max:255|unique:medications,medication_id,' . $id,
+            'type' => 'required|string|max:255',
             'group' => 'required|string|max:255',
             'quantity' => 'required|integer|min:0',
+            'ideal_quantity' => 'required|integer|min:0',
+            'minimum_quantity' => 'required|integer|min:1',
         ]);
 
         $medication = Medication::findOrFail($id);
