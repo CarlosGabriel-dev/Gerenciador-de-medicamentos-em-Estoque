@@ -17,5 +17,6 @@ class Medication extends Model
         'quantity',
         'ideal_quantity',
         'minimum_quantity',
+        'expiration_date',
     ];
 }

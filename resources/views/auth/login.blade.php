@@ -16,9 +16,6 @@
             <form action="/dashboard" method="GET">
                 <input type="email" placeholder="E-mail" required>
                 <input type="password" placeholder="Senha" required>
-                <div class="forgot-password">
-                    <a href="#">Esqueceu a senha?</a>
-                </div>
                 <button type="submit" class="btn">Entrar</button>
             </form>
         </div>

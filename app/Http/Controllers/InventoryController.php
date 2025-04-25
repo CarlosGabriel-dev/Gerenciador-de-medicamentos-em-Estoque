@@ -46,6 +46,7 @@ class InventoryController extends Controller
             'quantity' => 'required|integer|min:0',
             'ideal_quantity' => 'required|integer|min:0',
             'minimum_quantity' => 'required|integer|min:0',
+            'expiration_date' => 'nullable|date',
         ]);
 
         // Verifica duplicidade (nome + tipo + grupo)
@@ -86,6 +87,7 @@ class InventoryController extends Controller
             'quantity' => 'required|integer|min:0',
             'ideal_quantity' => 'required|integer|min:0',
             'minimum_quantity' => 'required|integer|min:1',
+            'expiration_date' => 'nullable|date',
         ]);
 
         $medication = Medication::findOrFail($id);

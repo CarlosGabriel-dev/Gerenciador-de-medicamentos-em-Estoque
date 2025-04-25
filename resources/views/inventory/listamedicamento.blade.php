@@ -19,9 +19,8 @@
         <h2 class="text-center">Humaniza</h2>
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <a href="{{ route('inventory.index') }}">Inventário</a>
-        <a href="#">Grupos de Medicamentos</a>
-        <a href="#">Relatório</a>
-        <a href="#">Cadastrar</a>
+        <a href="{{ route('relatorio') }}">Relatório</a>
+        <a href="{{ route('register') }}">Cadastrar</a>
     </div>
 
     <main class="main-content">
@@ -59,6 +58,7 @@
                         <th>ID Medicamento</th>
                         <th>Nome Grupo</th>
                         <th>Quantidade</th>
+                        <th>Validade</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -74,6 +74,7 @@
                         <td>{{ $medication->medication_id }}</td>
                         <td>{{ $medication->group }}</td>
                         <td>{{ $medication->quantity }}</td>
+                        <td>{{ \Carbon\Carbon::parse($medication->expiration_date)->format('d/m/Y') }}</td>
                         <td>
                             <a href="{{ route('inventory.edit', $medication->id) }}" class="btn btn-info" aria-label="Editar">
                                 <i class="fas fa-pencil-alt"></i>
