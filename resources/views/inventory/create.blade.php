@@ -15,7 +15,7 @@
         <h2 class="text-center">Humaniza</h2>
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <a href="{{ route('inventory.index') }}">Inventário</a>
-        <a href="{{ route('relatorio') }}">Relatório</a>
+        <a href="{{ route('relatorio.index') }}">Relatório</a>
         <a href="{{ route('register') }}">Cadastrar</a>
     </nav>
     <!-- Conteúdo principal -->

@@ -43,4 +43,6 @@ Route::get('/produto_teste/{id?}', function ($id = null) {
     return view('produto', ['id' => $id]);
 });
 
-Route::get('/relatorio', [RelatorioController::class, 'index'])->name('relatorio');
+Route::prefix('relatorio')->name('relatorio.')->group(function () {
+    Route::get('/', [RelatorioController::class, 'index'])->name('index');
+});

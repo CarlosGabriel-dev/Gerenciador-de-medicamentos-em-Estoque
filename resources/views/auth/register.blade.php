@@ -41,7 +41,7 @@
         <div class="sidebar-menu">
             <a href="{{ route('dashboard') }}">Dashboard</a>
             <a href="{{ route('inventory.index') }}">Inventário</a>
-            <a href="{{ route('relatorio') }}">Relatório</a>
+            <a href="{{ route('relatorio.index') }}">Relatório</a>
             <a href="{{ route('register') }}">Cadastrar</a>
         </div>
     </nav>
@@ -115,34 +115,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-  
-            const successMessage = '{{ session("success") }}';
-            if (successMessage) {
-                const modal = document.getElementById('success-modal');
-                const successText = document.getElementById('success-message');
-                const closeBtn = document.querySelector('.close-btn');
-
-                // Definir a mensagem de sucesso
-                successText.textContent = successMessage;
-
-                // Exibir o modal
-                modal.style.display = 'flex';
-
-                // Fechar o modal quando clicar na cruz
-                closeBtn.addEventListener('click', () => {
-                    modal.style.display = 'none';
-                });
-
-                // Fechar o modal após 4 segundos
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 4000);
-            }
-        });
-    </script>
 
 </body>
 

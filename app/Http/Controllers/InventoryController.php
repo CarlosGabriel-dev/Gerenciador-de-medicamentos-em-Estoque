@@ -81,14 +81,16 @@ class InventoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'medication_id' => 'required|string|max:255|unique:medications,medication_id,' . $id,
+            'medication_id' => 'required|string|max:255|unique:medications',
             'type' => 'required|string|max:255',
             'group' => 'required|string|max:255',
             'quantity' => 'required|integer|min:0',
             'ideal_quantity' => 'required|integer|min:0',
-            'minimum_quantity' => 'required|integer|min:1',
+            'minimum_quantity' => 'required|integer|min:0',
             'expiration_date' => 'nullable|date',
         ]);
+
+        dd('Validação Passou! Dados:', $validatedData);
 
         $medication = Medication::findOrFail($id);
         $medication->update($validatedData);

@@ -30,7 +30,7 @@
         <div class="sidebar-menu">
             <a href="{{ route('dashboard') }}">Dashboard</a>
             <a href="{{ route('inventory.index') }}">Inventário</a>
-            <a href="{{ route('relatorio') }}">Relatório</a>
+            <a href="{{ route('relatorio.index') }}">Relatório</a>
             <a href="{{ route('register') }}">Cadastrar</a>
         </div>
     </nav>
@@ -52,7 +52,7 @@
 
         <hr class="divider">
 
-        <section>
+        <section class="dashboard-header">
             <h1>Dashboard</h1>
             <p>Uma rápida visão geral dos dados do inventário</p>
         </section>

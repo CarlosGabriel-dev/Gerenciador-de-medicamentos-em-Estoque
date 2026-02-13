@@ -17,6 +17,11 @@ class Medication extends Model
         'quantity',
         'ideal_quantity',
         'minimum_quantity',
-        'expiration_date',
+        'expiration_date'
     ];
+
+    public function movimentacoes()
+    {
+        return $this->hasMany(Movimentacao::class);
+    }
 }
